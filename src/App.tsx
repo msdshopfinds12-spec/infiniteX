@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { Activity, Bot, CircleCheck as CheckCircle2, Cpu, GitBranch, Play, Search, Settings, ShieldCheck, Terminal, Zap } from "lucide-react";
+import { Analytics } from "@vercel/analytics/react";
 import Sidebar from "./components/Sidebar";
 import TopBar from "./components/TopBar";
 import { useTheme } from "./hooks/useTheme";
@@ -69,11 +70,12 @@ export default function App() {
               : "Settings";
 
   return (
-    <div className="app-shell">
-      <Sidebar view={view} onChange={setView} />
-      <div className="main">
-        <TopBar title={title} theme={theme} onToggleTheme={toggleTheme} />
-        <main className="content">
+    <>
+      <div className="app-shell">
+        <Sidebar view={view} onChange={setView} />
+        <div className="main">
+          <TopBar title={title} theme={theme} onToggleTheme={toggleTheme} />
+          <main className="content">
           {view === "overview" && (
             <>
               <section className="metrics">
@@ -192,5 +194,7 @@ export default function App() {
         </main>
       </div>
     </div>
+    <Analytics />
+  </>
   );
 }
