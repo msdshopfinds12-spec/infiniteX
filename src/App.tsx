@@ -1,17 +1,5 @@
 import { useMemo, useState } from "react";
-import {
-  Activity,
-  Bot,
-  CheckCircle2,
-  Cpu,
-  GitBranch,
-  Play,
-  Search,
-  Settings,
-  ShieldCheck,
-  Terminal,
-  Zap,
-} from "lucide-react";
+import { Activity, Bot, CircleCheck as CheckCircle2, Cpu, GitBranch, Play, Search, Settings, ShieldCheck, Terminal, Zap } from "lucide-react";
 import Sidebar from "./components/Sidebar";
 import TopBar from "./components/TopBar";
 import MetricCard from "./components/MetricCard";
