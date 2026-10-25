@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Activity, Bot, CircleCheck as CheckCircle2, Cpu, GitBranch, Play, Search, Settings, ShieldCheck, Terminal, Zap } from "lucide-react";
 import Sidebar from "./components/Sidebar";
 import TopBar from "./components/TopBar";
+import { useTheme } from "./hooks/useTheme";
 import MetricCard from "./components/MetricCard";
 import AgentList from "./components/AgentList";
 import PipelineBoard from "./components/PipelineBoard";
@@ -10,6 +11,7 @@ import type { ViewKey } from "./types";
 
 export default function App() {
   const [view, setView] = useState<ViewKey>("overview");
+  const { theme, toggleTheme } = useTheme();
 
   const metrics = useMemo(
     () => [
@@ -70,7 +72,7 @@ export default function App() {
     <div className="app-shell">
       <Sidebar view={view} onChange={setView} />
       <div className="main">
-        <TopBar title={title} />
+        <TopBar title={title} theme={theme} onToggleTheme={toggleTheme} />
         <main className="content">
           {view === "overview" && (
             <>

@@ -31,6 +31,47 @@
   background: var(--bg-0);
 }
 
+/* ---------- Light theme overrides ---------- */
+[data-theme="light"] {
+  --bg-0: #f4f6fb;
+  --bg-1: #ffffff;
+  --bg-2: #eef2f8;
+  --bg-3: #e2e8f0;
+  --border: #d8e0ec;
+  --border-soft: #e2e8f0;
+  --text-0: #0f172a;
+  --text-1: #334155;
+  --text-2: #64748b;
+  --text-3: #94a3b8;
+
+  --primary: #2563eb;
+  --primary-soft: rgba(37, 99, 235, 0.12);
+  --success: #059669;
+  --success-soft: rgba(5, 150, 105, 0.12);
+  --warning: #d97706;
+  --warning-soft: rgba(217, 119, 6, 0.12);
+  --error: #dc2626;
+  --error-soft: rgba(220, 38, 38, 0.12);
+  --neutral: #64748b;
+  --neutral-soft: rgba(100, 116, 139, 0.12);
+
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .app-shell {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(37, 99, 235, 0.06), transparent),
+    var(--bg-0);
+}
+
+[data-theme="light"] .topbar {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+[data-theme="light"] .brand-mark {
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
